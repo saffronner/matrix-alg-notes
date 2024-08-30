@@ -45,13 +45,27 @@
 
 == lec 2 2024/08/28
 i deleted the whole lecture sob
+
+- one method to matrix multiply:
+
+  $mat(3,0,7; 0,pi,2) mat(2;0;-3) = 2mat(3;0) + 0mat(0;pi) + (-3)mat(7;2) = mat(-15; -6)$
+
+  TODO what is the visual graphical intuition for what this means?
+- but notice the dot producting going on. ie $(A B)_(i j) = A^T_(i*) dot B_(*j)$:
 #figure(
   image("media/multiply_matrices.gif"),
   caption: "matrix multiplication. use dot products. see gif."
 )
 - matrix-vector mult is just viewing vector as column vector, 1 wide matrix
 - matrix mult properties:
+  - $m$x$n$ matrix times $n$x$o$ matrix is a $m$x$o$ matrix
   - Associative property for matrices: $A(B C)=(A B)C$
   - Commutative property of scalars: $c(A B)=(c A)B=A(c B)$
   - Left distributive property: $A(B+C)=A B+A C$
   - Right distributive property: $(B+C)A=B A+C A$
+- transpose matrix ($A^T$): just leetcode flip 2d array
+- $arrow(x) dot arrow(y) = arrow(x)^T arrow(y)$ when you view right half as matrix mult. as scalar
+- TODO something about why $(A B)^T =  B^T A^T$?
+
+== lec 3 2024/08/30
+collapsed into lec2
