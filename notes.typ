@@ -1,3 +1,4 @@
+#show: set image(width: 50%);
 // - $arrow(v)$
 #set math.vec(delim: "[")
 #set math.mat(delim: "[")
@@ -41,3 +42,16 @@
   a_(m 1)) $
   
   - $A_(i*)$ means the $i$th row1
+
+== lec 2 2024/08/28
+i deleted the whole lecture sob
+#figure(
+  image("media/multiply_matrices.gif"),
+  caption: "matrix multiplication. use dot products. see gif."
+)
+- matrix-vector mult is just viewing vector as column vector, 1 wide matrix
+- matrix mult properties:
+  - Associative property for matrices: $A(B C)=(A B)C$
+  - Commutative property of scalars: $c(A B)=(c A)B=A(c B)$
+  - Left distributive property: $A(B+C)=A B+A C$
+  - Right distributive property: $(B+C)A=B A+C A$
