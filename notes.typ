@@ -69,3 +69,26 @@ i deleted the whole lecture sob
 
 == lec 3 2024/08/30
 collapsed into lec2
+
+== lec
+- special matrices
+  - nxn: square
+  - $I_n$: the nxn identity matrix
+    - $A I = A$ and $I A = A$ for any $A$
+  - permutation matrices: sudoku the 1s
+    - $
+      mat(0,1,0;0,0,1;1,0,0)mat(A_(1*);A_(2*);A_(3*)) = mat(A_(2*); A_(3*); A_(1*))
+      $
+  - diagonal matrices: entries not on diagonal are 0. usually square.
+    - geometrically, the "scale our axes"
+    - jacobian matrices :3
+  - upper triangular: $A_(i j) = 0 "if" i > j$. i.e. entries _stictly_ lower than diag must be 0.
+    - lower triangular: see above. 
+    - swap between lower/upper triang. via transposes
+    - used to solve systems of equations
+
+=== systems of linear equations
+- e.g. solve $A arrow(x) = arrow(b)$ where $A$ is a upper triang. matrix 
+  $
+  A = mat(1,-1,2;0,8,-2;0,0,3), arrow(b) = vec(3,4,6) $
+- a linear equation is of the form $a_1x_1 + a_2x_2 + ... + a_n x_n = c$
