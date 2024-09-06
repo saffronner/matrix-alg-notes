@@ -70,7 +70,7 @@ i deleted the whole lecture sob
 == lec 3 2024/08/30
 collapsed into lec2
 
-== lec
+== lec 2024/09/04
 - special matrices
   - nxn: square
   - $I_n$: the nxn identity matrix
@@ -92,3 +92,40 @@ collapsed into lec2
   $
   A = mat(1,-1,2;0,8,-2;0,0,3), arrow(b) = vec(3,4,6) $
 - a linear equation is of the form $a_1x_1 + a_2x_2 + ... + a_n x_n = c$
+
+== lec 2024/09/06
+- review: solving systems in general
+
+  get from system of equations matrix to eschelon form matrix to reduced eschelon form
+  #image("media/solving_system_1.jpg")
+  #image("media/solving_system_2.jpg")
+
+- elementary row operations
+  - all reversible
+  - `row = c * row`
+  - `row += c * other_row`
+  - interchange rows
+
+- two systems are equivalent (have same soln set) if their corresponding augmented matrices are rwo equivalent
+
+- a linear system is _consistent_ if it has solutions (1 or inf) and _inconsistent_ otherwise (no solutions)
+  - inconsistent class example: we did the solve path and got an eschelon form of
+    $
+    mat(2,-3,2,1; 0,1,-4,8;0,0,0,15)
+    $
+    but $0 != 15$.
+  - consistent inf solutions class example: did solve path and got solution set of 
+  $
+  { arrow(x) = vec(x_1,x_2,x_3)=vec(1,4,0)+x_3 vec(5,-1,1) : x_3 in RR}
+  $
+
+- Echelon Form (EF) "easy to solve" definition:
+  - all nonzero rows above zero rows
+  - each leading entry (first nonzero entry) of a row is in a col to the right of the leading entry above 
+  - all entries below leading entry are zero
+  #image("media/echelon_form_visualization.jpg")
+
+- solving "easy to solve" Echelon Form get Reduced EF (REF)
+  - subset of Echelon form
+  - all leading entries are 1s
+  - each leading entry is the only nonzero in its column
