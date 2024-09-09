@@ -4,7 +4,6 @@
 #set math.mat(delim: "[")
 // #set text(font: "Garamond-Math.otf")
 = Linalg
-== lec 1 2024/08/26
 - scalars: real numbers and stuff, $RR$
 
 - vectors: a list of scalars. 
@@ -43,8 +42,7 @@
   
   - $A_(i*)$ means the $i$th row1
 
-== lec 2 2024/08/28
-=== Matrix Multiplication
+== Matrix Multiplication
 - definition:
 #figure(
   image("media/multiply_matrices.gif"),
@@ -68,10 +66,6 @@
 - $arrow(x) dot arrow(y) = arrow(x)^T arrow(y)$ when you view right half as matrix mult. as scalar
 - TODO something about why $(A B)^T =  B^T A^T$?
 
-== lec 3 2024/08/30
-collapsed into lec2
-
-== lec 2024/09/04
 - special matrices
   - nxn: square
   - $I_n$: the nxn identity matrix
@@ -88,13 +82,12 @@ collapsed into lec2
     - swap between lower/upper triang. via transposes
     - used to solve systems of equations
 
-=== systems of linear equations
+== systems of linear equations
 - e.g. solve $A arrow(x) = arrow(b)$ where $A$ is a upper triang. matrix 
   $
   A = mat(1,-1,2;0,8,-2;0,0,3), arrow(b) = vec(3,4,6) $
 - a linear equation is of the form $a_1x_1 + a_2x_2 + ... + a_n x_n = c$
 
-== lec 2024/09/06
 - review: solving systems in general
 
   get from system of equations matrix to echelon form matrix to reduced echelon form
