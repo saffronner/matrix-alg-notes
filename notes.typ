@@ -97,7 +97,7 @@ collapsed into lec2
 == lec 2024/09/06
 - review: solving systems in general
 
-  get from system of equations matrix to eschelon form matrix to reduced eschelon form
+  get from system of equations matrix to echelon form matrix to reduced echelon form
   #image("media/solving_system_1.jpg")
   #image("media/solving_system_2.jpg")
 
@@ -110,7 +110,9 @@ collapsed into lec2
 - two systems are equivalent (have same soln set) if their corresponding augmented matrices are rwo equivalent
 
 - a linear system is _consistent_ if it has solutions (1 or inf) and _inconsistent_ otherwise (no solutions)
-  - inconsistent class example: we did the solve path and got an eschelon form of
+  - a system is consistent iff the rightmost column of the augmented matrix is _not_ a pivot column
+  - if system consistent, then (inf. many solutions iff free variables exist)
+  - inconsistent class example: we did the solve path and got an echelon form of
     $
     mat(2,-3,2,1; 0,1,-4,8;0,0,0,15)
     $
@@ -128,5 +130,34 @@ collapsed into lec2
 
 - solving "easy to solve" Echelon Form get Reduced EF (REF)
   - subset of Echelon form
+  - unique
   - all leading entries are 1s
   - each leading entry is the only nonzero in its column
+  #image("media/reduced_echelon_form_visualiztion.png")
+
+- A pivot position corresponds to a leading 1 entry in the REF
+- A pivot column is a column of A that contains a pivot position.
+
+== Gaussian Elimination
+- how we get to the reduced echelon form
+- eg general solution to:
+  $
+  mat(1,-2,-1,3,0; -2,4,5,-5,3; 3,-6,-6,8,-3; augment: #4)
+  $
+  `R2 + 2R1,  R3 - 3R1,  R3 + R2,  R2 / 3,  R1 + R2`
+
+- let non pivot columns be free variables
+
+#figure(
+  image("media/solving_system_full.png"),
+  caption: "full example of solving a system"
+)
+
+- algorithm:
+  - "forward phase" gets to EF
+    + find leftmost nonzero column. (a pivot pos at top.) use row swaps to move a nonzero entry to pivot pos
+    + use row replacement to get zeros below the pivot.
+    + recurse: ignore top row, repeat prev. 2 steps on rest of matrix
+  - "backward phase" get to REF
+    4. use rescaling to make all leading entries 1
+    5. working left/upward, zero entires above pivot positions
