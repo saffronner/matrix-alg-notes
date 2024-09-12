@@ -154,3 +154,27 @@
   - "backward phase" get to REF
     4. use rescaling to make all leading entries 1
     5. working left/upward, zero entires above pivot positions
+
+== Homogeneous Systems
+- a linear system is _homogeneous_ iff it hsa the form $A arrow(x) = arrow(0)$
+  - (non/in homogeneous if that 0 is a nonzero $arrow(b)$)
+  - always consistent: $arrow(x) = arrow(0)$ is always a (trivial) solution
+
+- but do they have nontrivial solutions?
+  - just solve it (g. elim.)
+
+- if a homogeneous and nonhomogeneous system differs only in their $arrow(0) "vs" arrow(b)$ vector, their solutions sets will only differ by a translation
+  - eg you might get 
+    $
+    arrow(x)_"homogenous" = x_1 vec(1/5, 0, 1) "and" arrow(x)_"inhomogenous"= vec(0,8,-2) + x_1 vec(1/5, 0, 1)
+    $
+  - i.e., if $A arrow(x) = arrow(b)$ is consistent and $arrow(p)$  is a solution (i.e. $A arrow(p) = arrow(b)$), then the solution set to $A arrow(x)=arrow(b)$ is ${arrow(p) + arrow(v) : A arrow(v) = 0}$
+    - (note that for $A arrow(x) = 0$, the soln set is ${arrow(x) : A arrow(x) = 0}$)
+
+== Matrix inverses 
+- valid for for square matrices
+
+#figure(
+  image("media/matrix_inverse_primer.png"),
+  caption: [matrix inverses primer]
+)
