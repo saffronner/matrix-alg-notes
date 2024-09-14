@@ -94,11 +94,25 @@
   #image("media/solving_system_1.jpg")
   #image("media/solving_system_2.jpg")
 
-- elementary row operations
+- elementary row operations <elementary_row_operations>
+  #figure(
+    image("media/elementary_matrices_TODO.png"),
+    caption: [TODO transcribe matrices]
+  )
+  - elementary matrices $E$ correspond to these. 
+    - use via $E A$. 
+    - these are invertible
   - all reversible
-  - `row = c * row`
-  - `row += c * other_row`
+  - scaling rows: `row *= c`
+    #figure(
+      $
+      E = mat(1,0,0;0,1,0;0,0,3)
+      $, 
+      caption: [scale 3rd row by 3]
+    )
+  - replace rows: `row += c * other_row`
   - interchange rows
+    - permutation matrices
 
 - two systems are equivalent (have same soln set) if their corresponding augmented matrices are rwo equivalent
 
@@ -176,5 +190,48 @@
 
 #figure(
   image("media/matrix_inverse_primer.png"),
-  caption: [matrix inverses primer]
+  caption: [matrix inverses primer/motivating examples]
 )
+
+- a matrix $A$ is _invertible_ if there is a matrix $C$ s.t. $C A = I$ and $A C = I$
+  - in this case, $C = A^(-1)$
+
+- finding inverse not always possible. let $A = mat(1,1;1,1), $ trying to find $A^(-1).$
+  $
+  mat(1,1;1,1)mat(a,b;c,d)=mat(1,0;0,1) \
+  = mat(a+c, b+d; a+c, b+d)
+  $
+  but $0 != 1$.
+
+- non-invertible matrices are called _singular_
+
+- if $A$ invertible, $A arrow(x) = arrow(b)$ has a unique solution $arrow(x) = A^(-1) arrow(b)$
+
+- how to try finding $A^(-1)$
+  - let $A = mat(a,b;c,d)$ and the determinant $D$ be $a d - b c$.
+  - if $D != 0$, then $A^(-1) = 1/D mat(d,-b;-c,a)$
+  - if $D = 0, A$ is singular
+
+- in general for nxn matrices, find $A^(-1)$ via row reduction
+  - form the matrix $mat(A,I, augment: #1)$ and put it in REF
+  - if $A$ is invertible, we get $mat(I, A^(-1), augment: #1)$
+  - if $A$ is not invertible, then REF of $A$ is not $I$
+  #figure(
+    image("media/finding_mat_inverse_ex.png"),
+    caption: [finding matrix inverse example]
+  )
+  #figure(
+    image("media/finding_mat_inverse_reasoningproof.png"),
+    caption: [proof of why this method works]
+  )
+
+- elementary matrices are invertible (#link(<elementary_row_operations>)[noted above]). 
+  #figure(
+    image("media/inverting_elementary_matrices_ex.png"),
+    caption: [inverting elementary matrices]
+  )
+  - so if REF of $A$ is $I$, there are $E_1, ..., E_m$ s.t. 
+    $
+    (E_m E_(m-1) ... E_2 E_1)A = I
+    $
+    thus, $A^(-1)$ is simply the product of the elementary matrices.
