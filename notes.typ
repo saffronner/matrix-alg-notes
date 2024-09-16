@@ -95,10 +95,6 @@
   #image("media/solving_system_2.jpg")
 
 - elementary row operations <elementary_row_operations>
-  #figure(
-    image("media/elementary_matrices_TODO.png"),
-    caption: [TODO transcribe matrices]
-  )
   - elementary matrices $E$ correspond to these. 
     - use via $E A$. 
     - these are invertible
@@ -111,8 +107,14 @@
       caption: [scale 3rd row by 3]
     )
   - replace rows: `row += c * other_row`
+    #figure(
+      $
+      E = mat(1,0,0;0,1,0;3,0,1)
+      $, 
+      caption: [add 3R1 to 3rd row]
+    )
   - interchange rows
-    - permutation matrices
+    - permutation matrices: swap the rows of $I$ you want to swap
 
 - two systems are equivalent (have same soln set) if their corresponding augmented matrices are rwo equivalent
 
@@ -240,7 +242,7 @@
     thus, $A^(-1)$ is simply the product of the elementary matrices.
 
     additionally, $ A= E_1^(-1) ... E_(m-1)^(-1) E_m^(-1) $
-    following from (#link(<TEMPTEMP>)[above])
+    following from socks/shoes above (#link(<TEMPTEMP>)[link])
 
 === Vector spaces
 - vector spaces: $RR^n$ 
