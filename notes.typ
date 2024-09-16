@@ -22,7 +22,7 @@
   - $RR^2$: 
     - $ arrow(e_1) = vec(1, 0) $
     - $ arrow(e_2) = vec(0, 1) $
-  - $RR^3$
+  - $RR^3$:
     - $ arrow(e_1) = vec(1, 0, 0) $
     - $ arrow(e_2) = vec(0, 1, 0) $
     - $ arrow(e_3) = vec(0, 0, 1) $
@@ -40,7 +40,7 @@
   dots.v,dots.v,,;
   a_(m 1)) $
   
-  - $A_(i*)$ means the $i$th row1
+  - $A_(i*)$ means the $i$th row
 
 == Matrix Multiplication
 - definition:
@@ -75,7 +75,7 @@
       mat(0,1,0;0,0,1;1,0,0)mat(A_(1*);A_(2*);A_(3*)) = mat(A_(2*); A_(3*); A_(1*))
       $
   - diagonal matrices: entries not on diagonal are 0. usually square.
-    - geometrically, the "scale our axes"
+    - geometrically, they "scale our axes"
     - jacobian matrices :3
   - upper triangular: $A_(i j) = 0 "if" i > j$. i.e. entries _stictly_ lower than diag must be 0.
     - lower triangular: see above. 
@@ -121,7 +121,7 @@
   - if system consistent, then (inf. many solutions iff free variables exist)
   - inconsistent class example: we did the solve path and got an echelon form of
     $
-    mat(2,-3,2,1; 0,1,-4,8;0,0,0,15)
+    mat(2,-3,2,1; 0,1,-4,8;0,0,0,15; augment: #3)
     $
     but $0 != 15$.
   - consistent inf solutions class example: did solve path and got solution set of 
@@ -170,7 +170,7 @@
     5. working left/upward, zero entires above pivot positions
 
 == Homogeneous Systems
-- a linear system is _homogeneous_ iff it hsa the form $A arrow(x) = arrow(0)$
+- a linear system is _homogeneous_ iff it has the form $A arrow(x) = arrow(0)$
   - (non/in homogeneous if that 0 is a nonzero $arrow(b)$)
   - always consistent: $arrow(x) = arrow(0)$ is always a (trivial) solution
 
@@ -195,6 +195,9 @@
 
 - a matrix $A$ is _invertible_ if there is a matrix $C$ s.t. $C A = I$ and $A C = I$
   - in this case, $C = A^(-1)$
+
+- if $A,B$ invertible, then $A B$ invertible and $(A B)^(-1) = B^(-1) A^(-1)$
+  - imagine $A B arrow(x)$ is B first acting on $arrow(x)$ then $A$ acting on that. to undo, "shoes then socks" stack data structure method, we first $A^(-1)$ to undo the $A$ and then likewise with $B$, getting $B^(-1) A^(-1)$ <TEMPTEMP>
 
 - finding inverse not always possible. let $A = mat(1,1;1,1), $ trying to find $A^(-1).$
   $
@@ -235,3 +238,40 @@
     (E_m E_(m-1) ... E_2 E_1)A = I
     $
     thus, $A^(-1)$ is simply the product of the elementary matrices.
+
+    additionally, $ A= E_1^(-1) ... E_(m-1)^(-1) E_m^(-1) $
+    following from (#link(<TEMPTEMP>)[above])
+
+=== Vector spaces
+- vector spaces: $RR^n$ 
+
+- span: if $arrow(v)_1, ..., arrow(v)_n in RR^m$, their span is the set of all linear combinations
+  - i.e. $"span"{arrow(v)_1, ..., arrow(v)_n} = {c_1 arrow(v)_1+ ...+ c_n arrow(v)_n : c_1, ..., c_n  in RR}$
+
+- consider the question: determine if $arrow(b) in "span"{arrow(v)_1, ..., arrow(v)_n}$.
+  - i.e., are there constants such that $c_1 arrow(v)_1 + ... + c_n arrow(v)_n = arrow(b)$.
+  - if we view each $arrow(v)$ as  a column vector of a matrix $A$, we realize we are just asking: solve $A arrow(c) = arrow(b)$
+
+- thus, view columns of a matrix as spanning some linear space (line, plane, hyperplane)
+  - $A arrow(x) = arrow(b)$ is consistent iff $arrow(b) in "span"{"the cols of" A}$
+
+- theorem:
+  - the columns of A span $RR^n$ ($n$ being "height" of $A$)
+  - iff $forall arrow(b) in RR^n, A arrow(x) = arrow(b)$ is consistent
+  - iff $A$ has a pivot pos in every row
+
+- defn _linear independence_: all vecs point in "different directions"
+
+/* 
+HOMEWORK TODO:
+6d how to format solution set
+*/
+
+/*
+exam 1:
+1.1-1.5
+1.7-1.9
+2.1-2.3
+2.8-2.9
+- null space, column space, basis
+*/
