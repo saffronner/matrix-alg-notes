@@ -262,7 +262,30 @@
   - iff $forall arrow(b) in RR^n, A arrow(x) = arrow(b)$ is consistent
   - iff $A$ has a pivot pos in every row
 
+- a set of vectors $arrow(v)_1, ..., arrow(v)_n$ is _linearly independent_ if the only solution to 
+  $ x_1 arrow(v)_1, ..., x_n arrow(v)_n = 0$
+  is the trivial solution (all $x = 0$)
+  - i.e. if $A$'s columns are the vectors $arrow(v)$, then $A arrow(x) = 0$ has only one solution
+  - i.e. all $A$ has a pivot position in every column
+  - they are otherwise _linearly dependent_: 
 - defn _linear independence_: all vecs point in "different directions"
+
+- thrm: if $V = {arrow(v)_1, ..., arrow(v)_n}$ are linearly dependent, $exists arrow(v)_j in V, arrow(v)_j in "span"{V without arrow(v)_j}$
+  - intuitively? TODO
+
+- thrm: if $arrow(v)_1, ..., arrow(v)_n in RR^m$ and $n > m$, then the vecs are linearly dependent.
+  - informal proof: form the matrix $A$ from col vecs $arrow(v)$. $A$ is $n$ wide, $m$ tall. since $n > m$, this means there _must_ be some pivot column and therefore inf. solutions.
+
+- let $B = {arrow(b)_1, ... arrow(b)_m}$. $B$ is a basis for $RR^m$ if $"span"{B} = RR^m$ and $B$ is linearly independent.
+  - all bases of $RR^m$ have the same size (square! think: why? hints above...)
+
+- a subspace is denoted $H subset.eq RR^m$
+  - properties: 
+    + $0 in H$
+    + if $arrow(u), arrow(v) in H$, then $arrow(u) +  arrow(v) in H$ 
+    + if $arrow(u) in H, c in RR$, then $c arrow(u) in H$
+  - eg plane through $RR^3$'s origin
+  - non-eg a circle in $RR^2$. subspaces don't curve? if we escape the subspace by taking two points and adding them it's not actually a subspace.
 
 /* 
 HOMEWORK TODO:
