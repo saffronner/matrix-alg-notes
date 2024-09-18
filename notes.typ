@@ -258,20 +258,20 @@
   - $A arrow(x) = arrow(b)$ is consistent iff $arrow(b) in "span"{"the cols of" A}$
 
 - theorem:
-  - the columns of A span $RR^n$ ($n$ being "height" of $A$)
+  - the columns of $A$ span $RR^n$ ($n$ being "height" of $A$)
   - iff $forall arrow(b) in RR^n, A arrow(x) = arrow(b)$ is consistent
   - iff $A$ has a pivot pos in every row
 
-- a set of vectors $arrow(v)_1, ..., arrow(v)_n$ is _linearly independent_ if the only solution to 
-  $ x_1 arrow(v)_1, ..., x_n arrow(v)_n = 0$
-  is the trivial solution (all $x = 0$)
-  - i.e. if $A$'s columns are the vectors $arrow(v)$, then $A arrow(x) = 0$ has only one solution
-  - i.e. all $A$ has a pivot position in every column
-  - they are otherwise _linearly dependent_: 
-- defn _linear independence_: all vecs point in "different directions"
+- theorem:
+  - the columns of $A$ are _linearly independent_
+  - iff $A arrow(x) = 0$ has only one solution (the trivial $arrow(x) = arrow(0)$)
+  - iff $A$ has a pivot pos in every column
+  - (intuit: all vecs point in "different directions")
+  - (the column vecs are otherwise _linearly dependent_)
+
 
 - thrm: if $V = {arrow(v)_1, ..., arrow(v)_n}$ are linearly dependent, $exists arrow(v)_j in V, arrow(v)_j in "span"{V without arrow(v)_j}$
-  - intuitively? TODO
+  - i.e., if vecs are linearly dependent, one is in the span of the others 
 
 - thrm: if $arrow(v)_1, ..., arrow(v)_n in RR^m$ and $n > m$, then the vecs are linearly dependent.
   - informal proof: form the matrix $A$ from col vecs $arrow(v)$. $A$ is $n$ wide, $m$ tall. since $n > m$, this means there _must_ be some pivot column and therefore inf. solutions.
