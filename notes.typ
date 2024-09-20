@@ -279,6 +279,9 @@
 - let $B = {arrow(b)_1, ... arrow(b)_m}$. $B$ is a basis for $RR^m$ if $"span"{B} = RR^m$ and $B$ is linearly independent.
   - all bases of $RR^m$ have the same size (square! think: why? hints above...)
 
+- more generally, let $B = {arrow(b)_1, ... arrow(b)_m}$. $B$ is a basis for a subspace $H$ if $"span"{B} = H$ and $B$ is linearly independent.
+  - all bases of $H$ have the same size (not necessarily square), calle the dimension of $H$, $dim H$
+
 - a subspace is denoted $H subset.eq RR^m$
   - properties: 
     + $0 in H$
@@ -287,6 +290,27 @@
   - eg plane through $RR^3$'s origin
   - non-eg a circle in $RR^2$. subspaces don't curve? if we escape the subspace by taking two points and adding them it's not actually a subspace.
 
+- subspaces are spans of vectors ($H = "span"{arrow(v)_1, ..., arrow(v)_k}$)
+
+- "spanning set theorem": 
+  - let $S = {arrow(v)_1, ..., arrow(v)_k}, H = "span" S$.
+
+    if $S$ is linearly dependent ($exists$ redundancy), then $exists arrow(v)_j in S, arrow(v)_j in "span"{S without arrow(v)_j}$
+  - (this is basically a duplicate of above)
+  - note that $"span"{S} = "span"{S without arrow(v)_j}$
+  - can keep on "removing" vectors. when you are independent, you get $B$, a basis for $H$
+
+- let the column space of a matrix, $"col"(A)$, be the span of the columns of a matrix $A$
+  - notice: this is a subspace!
+
+- find a basis for $"col"(A)$:
+  - suppose matrix is in REF
+  - take the pivot cols of it!
+  - linear dependencies from REF are same as linear dependencies of the original matrix
+  - so the basis is the same exact pivot cols
+  - notice that if a free variable col can be created from some linear combination of pivot cols in the REF, they can be created with the same linear combination of the same pivot cols of the original matrix!
+
+- _rank_ is the dimension of the vector space spanned by a matrix's columns
 /* 
 HOMEWORK TODO:
 6d how to format solution set
