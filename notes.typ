@@ -3,6 +3,9 @@
 #set math.vec(delim: "[")
 #set math.mat(delim: "[")
 // #set text(font: "Garamond-Math.otf")
+#let span = math.op("span")
+#let col = math.op("col")
+
 = Linalg
 - scalars: real numbers and stuff, $RR$
 
@@ -248,14 +251,14 @@
 - vector spaces: $RR^n$ 
 
 - span: if $arrow(v)_1, ..., arrow(v)_n in RR^m$, their span is the set of all linear combinations
-  - i.e. $"span"{arrow(v)_1, ..., arrow(v)_n} = {c_1 arrow(v)_1+ ...+ c_n arrow(v)_n : c_1, ..., c_n  in RR}$
+  - i.e. $span{arrow(v)_1, ..., arrow(v)_n} = {c_1 arrow(v)_1+ ...+ c_n arrow(v)_n : c_1, ..., c_n  in RR}$
 
-- consider the question: determine if $arrow(b) in "span"{arrow(v)_1, ..., arrow(v)_n}$.
+- consider the question: determine if $arrow(b) in span{arrow(v)_1, ..., arrow(v)_n}$.
   - i.e., are there constants such that $c_1 arrow(v)_1 + ... + c_n arrow(v)_n = arrow(b)$.
   - if we view each $arrow(v)$ as  a column vector of a matrix $A$, we realize we are just asking: solve $A arrow(c) = arrow(b)$
 
 - thus, view columns of a matrix as spanning some linear space (line, plane, hyperplane)
-  - $A arrow(x) = arrow(b)$ is consistent iff $arrow(b) in "span"{"the cols of" A}$
+  - $A arrow(x) = arrow(b)$ is consistent iff $arrow(b) in span{"the cols of" A}$
 
 - theorem:
   - the columns of $A$ span $RR^n$ ($n$ being "height" of $A$)
@@ -270,16 +273,16 @@
   - (the column vecs are otherwise _linearly dependent_)
 
 
-- thrm: if $V = {arrow(v)_1, ..., arrow(v)_n}$ are linearly dependent, $exists arrow(v)_j in V, arrow(v)_j in "span"{V without arrow(v)_j}$
+- thrm: if $V = {arrow(v)_1, ..., arrow(v)_n}$ are linearly dependent, $exists arrow(v)_j in V, arrow(v)_j in span{V without arrow(v)_j}$
   - i.e., if vecs are linearly dependent, one is in the span of the others 
 
 - thrm: if $arrow(v)_1, ..., arrow(v)_n in RR^m$ and $n > m$, then the vecs are linearly dependent.
   - informal proof: form the matrix $A$ from col vecs $arrow(v)$. $A$ is $n$ wide, $m$ tall. since $n > m$, this means there _must_ be some pivot column and therefore inf. solutions.
 
-- let $B = {arrow(b)_1, ... arrow(b)_m}$. $B$ is a basis for $RR^m$ if $"span"{B} = RR^m$ and $B$ is linearly independent.
+- let $B = {arrow(b)_1, ... arrow(b)_m}$. $B$ is a basis for $RR^m$ if $span{B} = RR^m$ and $B$ is linearly independent.
   - all bases of $RR^m$ have the same size (square! think: why? hints above...)
 
-- more generally, let $B = {arrow(b)_1, ... arrow(b)_m}$. $B$ is a basis for a subspace $H$ if $"span"{B} = H$ and $B$ is linearly independent.
+- more generally, let $B = {arrow(b)_1, ... arrow(b)_m}$. $B$ is a basis for a subspace $H$ if $span{B} = H$ and $B$ is linearly independent.
   - all bases of $H$ have the same size (not necessarily square), calle the dimension of $H$, $dim H$
 
 - a subspace is denoted $H subset.eq RR^m$
@@ -290,20 +293,20 @@
   - eg plane through $RR^3$'s origin
   - non-eg a circle in $RR^2$. subspaces don't curve? if we escape the subspace by taking two points and adding them it's not actually a subspace.
 
-- subspaces are spans of vectors ($H = "span"{arrow(v)_1, ..., arrow(v)_k}$)
+- subspaces are spans of vectors ($H = span{arrow(v)_1, ..., arrow(v)_k}$)
 
 - "spanning set theorem": 
-  - let $S = {arrow(v)_1, ..., arrow(v)_k}, H = "span" S$.
+  - let $S = {arrow(v)_1, ..., arrow(v)_k}, H = span S$.
 
-    if $S$ is linearly dependent ($exists$ redundancy), then $exists arrow(v)_j in S, arrow(v)_j in "span"{S without arrow(v)_j}$
+    if $S$ is linearly dependent ($exists$ redundancy), then $exists arrow(v)_j in S, arrow(v)_j in span{S without arrow(v)_j}$
   - (this is basically a duplicate of above)
-  - note that $"span"{S} = "span"{S without arrow(v)_j}$
+  - note that $span{S} = span{S without arrow(v)_j}$
   - can keep on "removing" vectors. when you are independent, you get $B$, a basis for $H$
 
-- let the column space of a matrix, $"col"(A)$, be the span of the columns of a matrix $A$
+- let the column space of a matrix, $col(A)$, be the span of the columns of a matrix $A$
   - notice: this is a subspace!
 
-- find a basis for $"col"(A)$:
+- find a basis for $col(A)$:
   - suppose matrix is in REF
   - take the pivot cols of it!
   - linear dependencies from REF are same as linear dependencies of the original matrix
